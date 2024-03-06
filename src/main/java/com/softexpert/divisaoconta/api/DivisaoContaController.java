@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = {"api/divisaoConta"})
+@RequestMapping(path = {"api/divisao-conta"})
 public class DivisaoContaController {
 
     @Autowired
@@ -23,4 +23,9 @@ public class DivisaoContaController {
 //        });
 //        return divisaoContaDTO;
 //    }
+
+    @GetMapping("/dividir")
+    public String init () {
+        return "opa";
+    }
 }
