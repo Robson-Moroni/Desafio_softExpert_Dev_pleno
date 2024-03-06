@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 @Data
 public class OutroValor {
 
+    //TODO revisar essa logica
     private String tipoCobranca;
     private String tipoValor;
-    private BigDecimal valorCobranca;
 
     private boolean isValorEmReal() {
         return "REAL".equals(this.tipoCobranca);
@@ -18,6 +18,5 @@ public class OutroValor {
     private boolean isValorEmPorcentagem() {
         return "PORCENTAGEM".equals(this.tipoCobranca);
     }
-
 
 }
