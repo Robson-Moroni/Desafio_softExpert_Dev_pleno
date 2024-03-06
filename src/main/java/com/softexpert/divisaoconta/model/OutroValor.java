@@ -11,12 +11,15 @@ public class OutroValor {
     private String tipoCobranca;
     private String tipoValor;
 
-    private boolean isValorEmReal() {
-        return "REAL".equals(this.tipoCobranca);
+    public boolean isValorEmReal() {
+        return "REAL".equals(this.tipoValor);
     }
 
-    private boolean isValorEmPorcentagem() {
-        return "PORCENTAGEM".equals(this.tipoCobranca);
+    public boolean isValorEmPorcentagem() {
+        return "PORCENTAGEM".equals(this.tipoValor);
     }
 
+    public boolean isDesconto() {return "DESCONTO".equals(this.tipoCobranca);}
+
+    public boolean isAcrescimo() {return "ACRESCIMO".equals(this.tipoCobranca);}
 }
