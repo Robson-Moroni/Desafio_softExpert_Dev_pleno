@@ -11,5 +11,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ItemPedido {
     private String descricao;
-    private BigDecimal preco;
+    private BigDecimal valor;
+    private Long quantidade;
 }

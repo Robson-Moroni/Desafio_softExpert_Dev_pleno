@@ -7,6 +7,8 @@ import com.softexpert.divisaoconta.service.CalculadoraPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping(path = {"api/divisao-conta"})
 public class DivisaoContaController {
@@ -14,18 +16,15 @@ public class DivisaoContaController {
     @Autowired
     private CalculadoraPedidoService calculadoraPedidoService;
 
-//    @PostMapping("/dividir")
-//    public DivisaoContaDTO dividirConta(@RequestBody Conta conta) {
-//        DivisaoContaDTO divisaoContaDTO = new DivisaoContaDTO();
-//        pedido.getItens().forEach(item -> {
-//            double totalPago = calculadoraPedidoService.calcularTotalPagoPorItem(pedido, item);
-//            divisaoContaDTO.adicionarDivisao(item.getDescricao(), totalPago);
-//        });
-//        return divisaoContaDTO;
-//    }
+    @PostMapping("/dividir")
+    public DivisaoContaDTO dividirConta(@RequestBody final Conta conta) {
+        DivisaoContaDTO divisaoContaDTO = new DivisaoContaDTO();
+        conta.getPedidos().forEach(pedido -> {
+            BigDecimal totalPago = calculadoraPedidoService.calcularTotalPagoPorItem(conta, pedido);
+            divisaoContaDTO.adicionarDivisao(pedido.getPessoa(), totalPago);
+        });
 
-    @GetMapping("/dividir")
-    public String init () {
-        return "opa";
+        return divisaoContaDTO;
     }
+
 }
