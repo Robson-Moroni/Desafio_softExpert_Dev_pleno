@@ -18,13 +18,7 @@ public class DivisaoContaController {
 
     @PostMapping("/dividir")
     public DivisaoContaDTO dividirConta(@RequestBody final Conta conta) {
-        DivisaoContaDTO divisaoContaDTO = new DivisaoContaDTO();
-        conta.getPedidos().forEach(pedido -> {
-            BigDecimal totalPago = calculadoraPedidoService.calcularTotalPagoPorItem(conta, pedido);
-            divisaoContaDTO.adicionarDivisao(pedido.getPessoa(), totalPago);
-        });
-
-        return divisaoContaDTO;
+        return calculadoraPedidoService.calcularDivisaoConta(conta);
     }
 
 }

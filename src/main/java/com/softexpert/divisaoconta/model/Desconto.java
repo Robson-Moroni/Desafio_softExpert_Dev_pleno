@@ -7,9 +7,7 @@ import java.math.BigDecimal;
 @Data
 public class Desconto extends OutroValor {
 
-    public BigDecimal getValorProporcional(final BigDecimal proporcionalidade) {
-
-        return
+    public BigDecimal aplicar(final BigDecimal valorTotalPedido, final BigDecimal proporcionalidade){
+        return valorTotalPedido.subtract(this.getValorProporcional(proporcionalidade));
     }
-
 }
