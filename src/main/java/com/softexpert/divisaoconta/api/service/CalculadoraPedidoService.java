@@ -1,8 +1,8 @@
-package com.softexpert.divisaoconta.service;
+package com.softexpert.divisaoconta.api.service;
 
-import com.softexpert.divisaoconta.dto.DivisaoContaDTO;
-import com.softexpert.divisaoconta.model.Conta;
-import com.softexpert.divisaoconta.model.Pedido;
+import com.softexpert.divisaoconta.api.dto.DivisaoContaDTO;
+import com.softexpert.divisaoconta.api.model.Conta;
+import com.softexpert.divisaoconta.api.model.Pedido;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

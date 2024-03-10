@@ -1,14 +1,12 @@
 package com.softexpert.divisaoconta.api;
 
-import com.softexpert.divisaoconta.dto.DivisaoContaDTO;
-import com.softexpert.divisaoconta.model.Conta;
-import com.softexpert.divisaoconta.model.Pedido;
-import com.softexpert.divisaoconta.service.CalculadoraPedidoService;
-import com.softexpert.divisaoconta.service.PicpayService;
+import com.softexpert.divisaoconta.api.dto.DivisaoContaDTO;
+import com.softexpert.divisaoconta.api.model.Conta;
+import com.softexpert.divisaoconta.api.service.CalculadoraPedidoService;
+import com.softexpert.divisaoconta.api.service.PicpayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @RestController

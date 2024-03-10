@@ -1,14 +1,14 @@
 package com.softexpert.divisaoconta.service;
 
-import com.softexpert.divisaoconta.model.Conta;
-import com.softexpert.divisaoconta.model.ItemPedido;
-import com.softexpert.divisaoconta.model.OutroValor;
-import com.softexpert.divisaoconta.model.Pedido;
+import com.softexpert.divisaoconta.api.model.Conta;
+import com.softexpert.divisaoconta.api.model.ItemPedido;
+import com.softexpert.divisaoconta.api.model.OutroValor;
+import com.softexpert.divisaoconta.api.model.Pedido;
+import com.softexpert.divisaoconta.api.service.CalculadoraPedidoService;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

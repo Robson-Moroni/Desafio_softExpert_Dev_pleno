@@ -1,4 +1,4 @@
-package com.softexpert.divisaoconta.model;
+package com.softexpert.divisaoconta.api.model;
 
 import lombok.Data;
 
