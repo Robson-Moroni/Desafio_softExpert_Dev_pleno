@@ -12,6 +12,7 @@ public class Conta {
     private List<Pedido> pedidos;
     private List<OutroValor> outrosValores;
     private BigDecimal total;
+    private String destinoPagamento;
 
     public BigDecimal getTotal () {
         return this.pedidos.stream()

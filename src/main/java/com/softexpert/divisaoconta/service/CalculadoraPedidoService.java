@@ -7,18 +7,22 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CalculadoraPedidoService {
 
-    public DivisaoContaDTO calcularDivisaoConta(final Conta conta) {
-        DivisaoContaDTO divisaoContaDTO = new DivisaoContaDTO();
+    public List<DivisaoContaDTO> calcularDivisaoConta(final Conta conta) {
+        List<DivisaoContaDTO> listDivisaoContaDTO = new ArrayList<>();
         conta.getPedidos().forEach(pedido -> {
             final BigDecimal totalPago = calcularTotalPagoPorItem(conta, pedido);
-            divisaoContaDTO.adicionarDivisao(pedido.getPessoa(), totalPago);
+            listDivisaoContaDTO.add(DivisaoContaDTO.of(
+                    pedido.getPessoa(),
+                    totalPago));
         });
 
-        return divisaoContaDTO;
+        return listDivisaoContaDTO;
     }
 
     public BigDecimal calcularTotalPagoPorItem(final Conta conta, final Pedido pedido) {

@@ -1,6 +1,8 @@
 package com.softexpert.divisaoconta.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -8,9 +10,19 @@ import java.util.Map;
 
 @Data
 public class DivisaoContaDTO {
-    private Map<String, BigDecimal> divisaoPorPessoa = new HashMap<>();
+    private String nomeDonoPedido;
+    private BigDecimal valorAPagar;
+    private String linkSimplificadoPagamento;
 
-    public void adicionarDivisao(final String pessoa, final BigDecimal valor) {
-        divisaoPorPessoa.put(pessoa, valor);
+    public DivisaoContaDTO(final String nomeDonoPedido, final BigDecimal valorAPagar) {
+        this.nomeDonoPedido = nomeDonoPedido;
+        this.valorAPagar = valorAPagar;
+    }
+
+    public static DivisaoContaDTO of(
+            final String nomeDonoPedido,
+            final BigDecimal valorAPagar){
+
+        return new DivisaoContaDTO(nomeDonoPedido,valorAPagar);
     }
 }
