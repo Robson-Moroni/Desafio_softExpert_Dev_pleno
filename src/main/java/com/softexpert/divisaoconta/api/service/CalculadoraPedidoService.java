@@ -13,18 +13,19 @@ import java.util.List;
 @Service
 public class CalculadoraPedidoService {
 
+    //TODO teste
     public List<DivisaoContaDTO> calcularDivisaoConta(final Conta conta) {
         List<DivisaoContaDTO> listDivisaoContaDTO = new ArrayList<>();
         conta.getPedidos().forEach(pedido -> {
             final BigDecimal totalPago = calcularTotalPagoPorItem(conta, pedido);
-            listDivisaoContaDTO.add(DivisaoContaDTO.of(
-                    pedido.getPessoa(),
-                    totalPago));
+            final DivisaoContaDTO divisaoContaPorPedido = DivisaoContaDTO.of(pedido.getPessoa(), totalPago);
+            listDivisaoContaDTO.add(divisaoContaPorPedido);
         });
 
         return listDivisaoContaDTO;
     }
 
+    //TODO teste
     public BigDecimal calcularTotalPagoPorItem(final Conta conta, final Pedido pedido) {
 
            final BigDecimal proporcaoPedido = pedido.getTotalPedido().divide(

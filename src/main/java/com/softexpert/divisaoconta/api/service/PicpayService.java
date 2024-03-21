@@ -15,16 +15,13 @@ public class PicpayService implements PagamentoService<InformacoesPagamentoDTO> 
                                                         final String destinoPagamento) {
         divisaoContaDTOS.forEach(divisaoContaDTO -> {
 
-         divisaoContaDTO.getInformacoesPagamentoDTO()
-                    .adicionarDestinoPagamento(destinoPagamento);
-
          final String linkPagamento = gerarLinkPagamento(divisaoContaDTO.getInformacoesPagamentoDTO());
-
-         divisaoContaDTO.getInformacoesPagamentoDTO().adicionarLinkSimplificadoPagamento(linkPagamento);
+         divisaoContaDTO.getInformacoesPagamentoDTO()
+                 .adicionarDestinoPagamento(destinoPagamento)
+                 .adicionarLinkSimplificadoPagamento(linkPagamento);
         });
 
         return divisaoContaDTOS;
-
     }
 
     @Override

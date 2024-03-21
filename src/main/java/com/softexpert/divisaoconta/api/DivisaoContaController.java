@@ -19,6 +19,7 @@ public class DivisaoContaController {
     @Autowired
     private PicpayService picpayService;
 
+    //TODO teste
     @PostMapping("/dividir")
     public List<DivisaoContaDTO> dividirConta(@RequestBody final Conta conta) {
         final List<DivisaoContaDTO> divisaoContaDTO = calculadoraPedidoService.calcularDivisaoConta(conta);

@@ -20,16 +20,19 @@ public class Pedido {
                 .setScale(2, RoundingMode.HALF_UP);
     }
 
+    //TODO teste
     public Pedido aplicarDesconto(final Desconto desconto, final BigDecimal proporcaoPedido) {
         this.totalCalculado = desconto.aplicar(getTotalCalculado(), proporcaoPedido);
         return this;
     }
 
+    //TODO teste
     public Pedido aplicarAcrescimo(final Acrescimo acrescimo, final BigDecimal proporcaoPedido) {
         this.totalCalculado = acrescimo.aplicar(getTotalCalculado(), proporcaoPedido);
         return this;
     }
 
+    //TODO teste
     public BigDecimal getTotalCalculado() {
         return Optional.ofNullable(this.totalCalculado).orElse(getTotalPedido());
     }
