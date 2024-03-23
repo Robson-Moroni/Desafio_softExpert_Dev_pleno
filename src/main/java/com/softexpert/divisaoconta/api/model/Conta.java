@@ -1,5 +1,7 @@
 package com.softexpert.divisaoconta.api.model;
 
+import com.softexpert.divisaoconta.api.service.calculo.Acrescimo;
+import com.softexpert.divisaoconta.api.service.calculo.Desconto;
 import lombok.Data;
 
 import java.math.BigDecimal;

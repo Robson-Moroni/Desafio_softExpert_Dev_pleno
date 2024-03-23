@@ -1,5 +1,6 @@
-package com.softexpert.divisaoconta.api.model;
+package com.softexpert.divisaoconta.api.service.calculo;
 
+import com.softexpert.divisaoconta.api.model.OutroValor;
 import lombok.Data;
 
 import java.math.BigDecimal;

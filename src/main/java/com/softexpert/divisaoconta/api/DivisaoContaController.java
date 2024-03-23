@@ -3,7 +3,7 @@ package com.softexpert.divisaoconta.api;
 import com.softexpert.divisaoconta.api.dto.DivisaoContaDTO;
 import com.softexpert.divisaoconta.api.model.Conta;
 import com.softexpert.divisaoconta.api.service.CalculadoraPedidoService;
-import com.softexpert.divisaoconta.api.service.PicpayService;
+import com.softexpert.divisaoconta.api.service.pagamento.PicpayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

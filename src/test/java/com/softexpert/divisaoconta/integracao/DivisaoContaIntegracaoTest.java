@@ -1,4 +1,4 @@
-package com.softexpert.divisaoconta.service;
+package com.softexpert.divisaoconta.integracao;
 
 import com.softexpert.divisaoconta.api.dto.DivisaoContaDTO;
 import com.softexpert.divisaoconta.api.model.Conta;
@@ -6,7 +6,7 @@ import com.softexpert.divisaoconta.api.model.ItemPedido;
 import com.softexpert.divisaoconta.api.model.OutroValor;
 import com.softexpert.divisaoconta.api.model.Pedido;
 import com.softexpert.divisaoconta.api.service.CalculadoraPedidoService;
-import com.softexpert.divisaoconta.api.service.PicpayService;
+import com.softexpert.divisaoconta.api.service.pagamento.PicpayService;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DivisaoContaTest {
+public class DivisaoContaIntegracaoTest {
 
     private CalculadoraPedidoService service = new CalculadoraPedidoService();
 

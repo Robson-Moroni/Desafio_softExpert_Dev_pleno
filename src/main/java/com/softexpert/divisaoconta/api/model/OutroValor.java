@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OutroValor {
+    //TODO avaliar uso de enum
     protected String tipo;
     protected BigDecimal valor;
     protected String descricao;
