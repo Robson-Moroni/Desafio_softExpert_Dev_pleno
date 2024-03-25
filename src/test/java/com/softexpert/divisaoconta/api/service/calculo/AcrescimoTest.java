@@ -14,16 +14,14 @@ public class AcrescimoTest {
     @Test
     void deveAplicarAcrescimoEmReal() {
 
-        final OutroValor outroValor = new OutroValor();
-        outroValor.setTipo("REAL");
-        outroValor.setDescricao("Entrega do pedido");
-        outroValor.setValor(BigDecimal.TEN);
+        final Acrescimo acrescimo = new Acrescimo();
+        acrescimo.setTipo("REAL");
+        acrescimo.setDescricao("Entrega do pedido");
+        acrescimo.setValor(BigDecimal.TEN);
 
-        final Acrescimo acrescimo = (Acrescimo) outroValor;
+        final BigDecimal valorComAcrescimo = acrescimo.aplicar(BigDecimal.TEN, BigDecimal.valueOf(0.1));
 
-        BigDecimal valorComAcrescimo = acrescimo.aplicar(BigDecimal.TEN, BigDecimal.ONE);
-
-        assertEquals(BigDecimal.valueOf(11L), valorComAcrescimo);
+        assertEquals(BigDecimal.valueOf(11.0), valorComAcrescimo);
 
     }
 }
